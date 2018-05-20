@@ -79,6 +79,7 @@ function loadModel() {
 				child.castShadow = true;
 			}
 		});
+		object.name = 'model';
 		scene.add(object);
 	});
 }
@@ -90,7 +91,7 @@ function init() {
 	createCamera();
 	createLight();
 
-	loadModel();
+	loadModel();	
 
 	document.body.appendChild(renderer.domElement);
 
@@ -99,7 +100,9 @@ function init() {
 
 function render() {
 	cameraControl.update();
-
+	if (scene.getObjectByName('model')) {
+		scene.getObjectByName('model').rotation.y += 5;
+	}
 	renderer.render(scene, camera);
 	requestAnimationFrame(render);
 }
