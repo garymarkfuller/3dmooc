@@ -143,8 +143,8 @@ function init() {
 function render() {
 	cameraControl.update();
 
-	scene.getObjectByName('earth').rotation.y += 0.005;
-	scene.getObjectByName('clouds').rotation.y += 0.01;
+	scene.getObjectByName('earth').rotation.y += 5;
+	scene.getObjectByName('clouds').rotation.y += 1;
 
 	renderer.render(scene, camera);
 	requestAnimationFrame(render);
